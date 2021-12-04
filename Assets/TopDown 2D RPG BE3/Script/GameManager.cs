@@ -6,12 +6,18 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public talkManager talkmanager;
+    public QuestManager questManager;
     public Text talkText;
     public Image portraitImg;
     public GameObject scanObject;
     public GameObject talkPanel;
     public bool isAction;
     public int talkIndex;
+
+    void Start()
+    {
+        Debug.Log(questManager.CheckQuest());
+    }
 
     public void Action(GameObject scanObj)
     {
@@ -24,12 +30,16 @@ public class GameManager : MonoBehaviour
 
     void Talk(int id, bool isNpc)
     {
-        string talkData = talkmanager.GetTalk(id,talkIndex);
+        int questTalkIndex = questManager.GetQuestTalkIndex(id);
 
+        string talkData = talkmanager.GetTalk(id + questTalkIndex,talkIndex);
+
+        //대화가 끝나면 배열의 다음은 NUll이기에 움직일수있게[false] 만들고 대화상태 초기화후 종료
         if (talkData == null)
         {
             isAction = false;
             talkIndex = 0;
+            Debug.Log(questManager.CheckQuest(id));
             return;
         }
 
