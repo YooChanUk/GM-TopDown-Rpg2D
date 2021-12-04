@@ -35,11 +35,15 @@ public class GameManager : MonoBehaviour
 
         if(isNpc)
         {
-            talkText.text = talkData;
+            talkText.text = talkData.Split(':')[0];
+
+            portraitImg.sprite = talkmanager.GetPortrait(id,int.Parse(talkData.Split(':')[1]));
+            portraitImg.color = new Color(1,1,1,1);
         }
         else
         {
             talkText.text = talkData;
+            portraitImg.color = new Color(0,0,0,0);
         }
 
         isAction = true;

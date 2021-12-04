@@ -442,7 +442,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &79712539
 Animator:
@@ -548,7 +548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talkmanager: {fileID: 1143125058}
   talkText: {fileID: 1461030261}
-  portraitImg: {fileID: 0}
+  portraitImg: {fileID: 2004444718}
   scanObject: {fileID: 0}
   talkPanel: {fileID: 1836283095}
   isAction: 0
@@ -646,7 +646,7 @@ RectTransform:
   m_Children:
   - {fileID: 1836283096}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -752,7 +752,7 @@ Transform:
   m_Children:
   - {fileID: 519420032}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &453314976
 Rigidbody2D:
@@ -1006,7 +1006,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &818312633
 BoxCollider2D:
@@ -1394,6 +1394,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b9def20df5a344d9d0474f1acbef37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portraitArr:
+  - {fileID: -1498629393909832148, guid: d79edf18a76e2654a9ac99f15de8b2b3, type: 3}
+  - {fileID: 5617964459799366859, guid: d79edf18a76e2654a9ac99f15de8b2b3, type: 3}
+  - {fileID: -197052863676312565, guid: d79edf18a76e2654a9ac99f15de8b2b3, type: 3}
+  - {fileID: -7439931144458868404, guid: d79edf18a76e2654a9ac99f15de8b2b3, type: 3}
+  - {fileID: 1008977445375097534, guid: d79edf18a76e2654a9ac99f15de8b2b3, type: 3}
+  - {fileID: -3047031512852110731, guid: d79edf18a76e2654a9ac99f15de8b2b3, type: 3}
+  - {fileID: -8419047691886735130, guid: d79edf18a76e2654a9ac99f15de8b2b3, type: 3}
+  - {fileID: -943545548610400999, guid: d79edf18a76e2654a9ac99f15de8b2b3, type: 3}
 --- !u!4 &1143125059
 Transform:
   m_ObjectHideFlags: 0
@@ -1406,7 +1415,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1173654137
 GameObject:
@@ -1454,7 +1463,7 @@ Transform:
   - {fileID: 4987708}
   - {fileID: 1713804345}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1177974063
 GameObject:
@@ -2678,7 +2687,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1348885302
 GameObject:
@@ -3990,7 +3999,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1787214222
 BoxCollider2D:
@@ -4049,7 +4058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1836283096
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4193,7 +4202,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1855402493
 Animator:
