@@ -15,10 +15,28 @@ public class GameManager : MonoBehaviour
     public bool isAction;
     public int talkIndex;
     public Sprite prevPortrait;
+    public GameObject MenuSet;
 
     void Start()
     {
         Debug.Log(questManager.CheckQuest());
+    }
+
+    private void Update()
+    {
+
+        if(Input.GetButtonDown("Cancel"))//메뉴창 열고 끄기
+        {
+            if (MenuSet.activeSelf)
+            {
+                MenuSet.SetActive(false);
+            }
+            else
+            {
+                MenuSet.SetActive(true);
+            }
+            
+        }
     }
 
     public void Action(GameObject scanObj)
