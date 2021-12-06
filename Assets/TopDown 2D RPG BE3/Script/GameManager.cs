@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public talkManager talkmanager;
     public QuestManager questManager;
     public TypeEffect talk;
+    public Text questTalk;
     public Animator portraitAnim;
     public Image portraitImg;
     public GameObject scanObject;
@@ -16,10 +17,12 @@ public class GameManager : MonoBehaviour
     public int talkIndex;
     public Sprite prevPortrait;
     public GameObject MenuSet;
+    public GameObject Player;
 
     void Start()
     {
-        Debug.Log(questManager.CheckQuest());
+        GameLoad();
+        questTalk.text = questManager.CheckQuest();
     }
 
     private void Update()
@@ -72,7 +75,7 @@ public class GameManager : MonoBehaviour
         {
             isAction = false;
             talkIndex = 0;
-            Debug.Log(questManager.CheckQuest(id));
+            questTalk.text = questManager.CheckQuest(id);
             return;
         }
 
@@ -98,5 +101,37 @@ public class GameManager : MonoBehaviour
 
         isAction = true;
         talkIndex++;
+    }
+
+    public void GameSave()
+    {
+        PlayerPrefs.SetFloat("Player.X", Player.transform.position.x);
+        PlayerPrefs.SetFloat("Player.Y", Player.transform.position.y);
+        PlayerPrefs.SetInt("QuestId", questManager.questId);
+        PlayerPrefs.SetFloat("QuestActionIndex", questManager.questActionIndex);
+        PlayerPrefs.Save();
+
+        MenuSet.SetActive(false);
+    }
+
+    public void GameLoad()
+    {
+        if (PlayerPrefs.HasKey("Player.X"))
+            return;
+
+        float x = PlayerPrefs.GetFloat("Player.X");
+        float y = PlayerPrefs.GetFloat("Player.Y");
+        int questId = PlayerPrefs.GetInt("QuestId");
+        int questActionIndex = PlayerPrefs.GetInt("QuestActionIndex");
+
+        Player.transform.position = new Vector3(x, y, 0);
+        questManager.questId = questId;
+        questManager.questActionIndex = questActionIndex;
+        questManager.Controlobject();
+    }
+
+    public void GameExit()
+    {
+        Application.Quit();
     }
 }
