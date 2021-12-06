@@ -28,8 +28,14 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
 
-        if(Input.GetButtonDown("Cancel"))//메뉴창 열고 끄기
+        if (Input.GetButtonDown("Cancel"))//메뉴창 열고 끄기
         {
+            SubMenuActive();
+        }
+    }
+
+    public void SubMenuActive()
+    {
             if (MenuSet.activeSelf)
             {
                 MenuSet.SetActive(false);
@@ -38,8 +44,6 @@ public class GameManager : MonoBehaviour
             {
                 MenuSet.SetActive(true);
             }
-            
-        }
     }
 
     public void Action(GameObject scanObj)
